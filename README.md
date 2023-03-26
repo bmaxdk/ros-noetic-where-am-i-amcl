@@ -410,13 +410,13 @@ Send a `2D Nav Goal` from RViz. Click the `2D Nav Goal` button in the toolbar, t
 ## Tuning Localization Parameters
 The amcl package has a lot of parameters to select from. Different sets of parameters contribute to different aspects of the algorithm. Broadly speaking, they can be categorized into three categories - overall filter, laser, and odometry. Let’s cover some of the parameters that we recommend you start with or details to focus on.
 
-Overall Filter
+#### Overall Filter
 * `min_particles` and `max_particles` - As amcl dynamically adjusts its particles for every iteration, it expects a range of the number of particles as an input. Often, this range is tuned based on your system specifications. A larger range, with a high maximum might be too computationally extensive for a low-end system.
 * `initial_pose` - For the project, you should set the position to [0, 0]. Feel free to play around with the mean yaw value.
 * `update_min*` - `amcl` relies on incoming laser scans. Upon receiving a scan, it checks the values for `update_min_a` and `update_min_d` and compares to how far the robot has moved. Based on this comparison it decides whether or not to perform a filter update or to discard the scan data. Discarding data could result in poorer localization results, and too many frequent filter updates for a fast moving robot could also cause computational problems.
 
 
-Laser
+#### Laser
 There are two different types of models to consider under this - the `likelihood_field` and the `beam`. Each of these models defines how the laser rangefinder sensor estimates the obstacles in relation to the robot.
 
 The `likelihood_field` model is usually more computationally efficient and reliable for an environment such as the one you are working with. So you can focus on parameters for that particular model such as the -
@@ -427,7 +427,7 @@ The `likelihood_field` model is usually more computationally efficient and relia
 Tuning of these parameters will have to be experimental. While tuning them, observe the laser scan information in RViz and try to make sure that the laser scan matches or is aligned with the actual map, and how it gets updated as the robot moves. The better the estimation of where the obstacles are, the better the localization results.
 
 
-Odometry
+#### Odometry
 `odom_model_type` - Since you are working with a differential drive mobile robot, it’s best to use the `diff-corrected` type. There are additional parameters that are specific to this type - the `odom_alphas` (1 through 4). These parameters define how much noise is expected from the robot's movements/motions as it navigates inside the map.
 
 Note: The odometry information for this project is received directly from Gazebo, and is equivalent to the ground truth value (no noise expected). So, you need not have to tune these parameters and can leave them at their default values. But feel free to experiment with some values and see if you notice any changes.
