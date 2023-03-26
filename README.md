@@ -3,13 +3,15 @@ ROS-Noetic
 
 Application of using the adaptive monte carlo localizatin (AMCL) algorithm is implemented in ROS. AMCL dynamically adjusts the number of particles over a period of time, as the robot navigates around in a map. The process of AMCL algorithm is followed by the [amcl](http://wiki.ros.org/amcl) ROS package to get a working localization. This is done in ROS-noetic. If you wish to launch file in ROS-kinetic, read [ros-kinetic-whereami](https://github.com/bmaxdk/RoboticsND-where-am-i.git).
 
-[image1]: img/p1.png "img1"
-[image2]: img/p2.png "img2"
-[image3]: img/f1.png "img3"
-[image4]: img/f2.png "img4"
+[image1]: img/c1.png "img1"
+[image2]: img/i1.png "img2"
+[image3]: img/i2.png "img3"
+[image4]: img/m1.png "img4"
+[image5]: img/n1.png "img5"
+[image6]: img/n3.png "img6"
+[image7]: img/f1.png "img7"
 
-
-![alt text][image4]
+![alt text][image7]
 
 
 ### Getting started
@@ -102,15 +104,26 @@ angular:
   y: 0.0
   z: 0.1" 
 ```
+
+(options4) using 2D Nav Goal to drag in rviz
+
 ### Result
-Initial Condition 
+Command line with teleop key
 ![alt text][image1]
 
-Processing Condition
+Initial Condition with teleop key
 ![alt text][image2]
+![alt text][image3]
+
+Result with teleop key in few steps
+![alt text][image4]
+
+Using 2D Nav Goal
+![alt text][image5]
+![alt text][image6]
 
 Final Result
-![alt text][image3]
+![alt text][image7]
 
 ## Directory Structure
 ```bash
