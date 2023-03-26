@@ -1,7 +1,8 @@
 <launch>
   <!-- Parameter -->
-  <arg name="x_init_value" default="0"/>
-  <arg name="y_init_value" default="0"/>
+  <arg name="x_init_value" default="15"/>
+  <arg name="y_init_value" default="5"/>
+  <arg name="a_init_value" default="-1.5708"/>
   <arg name="scan_topic"     default="scan"/>
 
   <!-- Map Server Node -->
@@ -46,6 +47,7 @@
     <!-- <param name="initial_pose_y" value="0"/> -->
     <param name="initial_pose_x" value="$(arg x_init_value)"/>
     <param name="initial_pose_y" value="$(arg y_init_value)"/>
+    <param name="initial_pose_a" value="$(arg a_init_value)"/>
   </node>
 
   <!-- Move Base -->
