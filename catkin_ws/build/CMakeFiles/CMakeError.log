@@ -1,0 +1,96 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d61c7/fast && /usr/bin/make -f CMakeFiles/cmTC_d61c7.dir/build.make CMakeFiles/cmTC_d61c7.dir/build
+make[1]: Entering directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d61c7.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d61c7.dir/src.c.o   -c /home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d61c7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d61c7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_d61c7.dir/src.c.o  -o cmTC_d61c7 
+/usr/bin/ld: CMakeFiles/cmTC_d61c7.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_d61c7.dir/build.make:87: cmTC_d61c7] Error 1
+make[1]: Leaving directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_d61c7/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_71f7b/fast && /usr/bin/make -f CMakeFiles/cmTC_71f7b.dir/build.make CMakeFiles/cmTC_71f7b.dir/build
+make[1]: Entering directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_71f7b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_71f7b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_71f7b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71f7b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_71f7b.dir/CheckFunctionExists.c.o  -o cmTC_71f7b  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_71f7b.dir/build.make:87: cmTC_71f7b] Error 1
+make[1]: Leaving directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_71f7b/fast] Error 2
+
+
+
+Determining if the include file FL/Fl.H exists failed with the following output:
+Change Dir: /home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5e43e/fast && make[1]: Entering directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_5e43e.dir/build.make CMakeFiles/cmTC_5e43e.dir/build
+make[2]: Entering directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5e43e.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_5e43e.dir/CheckIncludeFile.cxx.o -c /home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: FL/Fl.H: No such file or directory
+    1 | #include <FL/Fl.H>
+      |          ^~~~~~~~~
+compilation terminated.
+make[2]: *** [CMakeFiles/cmTC_5e43e.dir/build.make:66: CMakeFiles/cmTC_5e43e.dir/CheckIncludeFile.cxx.o] Error 1
+make[2]: Leaving directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_5e43e/fast] Error 2
+make[1]: Leaving directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pgm.h exists failed with the following output:
+Change Dir: /home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9544f/fast && make[1]: Entering directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9544f.dir/build.make CMakeFiles/cmTC_9544f.dir/build
+make[2]: Entering directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9544f.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_9544f.dir/CheckIncludeFile.cxx.o -c /home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: pgm.h: No such file or directory
+    1 | #include <pgm.h>
+      |          ^~~~~~~
+compilation terminated.
+make[2]: *** [CMakeFiles/cmTC_9544f.dir/build.make:66: CMakeFiles/cmTC_9544f.dir/CheckIncludeFile.cxx.o] Error 1
+make[2]: Leaving directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_9544f/fast] Error 2
+make[1]: Leaving directory '/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/build/CMakeFiles/CMakeTmp'
+
+
+

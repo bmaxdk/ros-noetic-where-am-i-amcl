@@ -1,0 +1,8 @@
+prefix=/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/devel
+
+Name: dwa_local_planner
+Description: Description of dwa_local_planner
+Version: 1.17.3
+Cflags: -I/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/devel/include -I/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/src/navigation/dwa_local_planner/include
+Libs: -L${prefix}/lib -ldwa_local_planner
+Requires: base_local_planner dynamic_reconfigure nav_msgs pluginlib sensor_msgs roscpp tf2 tf2_ros

@@ -1,0 +1,2 @@
+ball_chaser:my_robot:teleop_twist_keyboard:whereami
+-DCATKIN_DEVEL_PREFIX=/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/install -G Unix Makefiles

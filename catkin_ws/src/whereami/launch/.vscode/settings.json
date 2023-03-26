@@ -1,0 +1,7 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/devel/lib/python3/dist-packages",
+        "/home/eight/Downloads/Udacity_RoboticsSE/Project/whereami/workspace/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

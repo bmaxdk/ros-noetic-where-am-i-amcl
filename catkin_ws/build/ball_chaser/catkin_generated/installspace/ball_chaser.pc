@@ -1,0 +1,8 @@
+prefix=/home/eight/Downloads/Udacity_RoboticsSE/Project/RoboticsND-where-am-i/catkin_ws/install
+
+Name: ball_chaser
+Description: Description of ball_chaser
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 
