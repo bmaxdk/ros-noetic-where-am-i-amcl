@@ -59,7 +59,7 @@
     <rosparam file="$(find whereami)/config/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find whereami)/config/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find whereami)/config/base_local_planner_params.yaml" command="load" />
-
+    <remap from="scan" to="$(arg scan_topic)"/>
   </node>
 
 </launch>
