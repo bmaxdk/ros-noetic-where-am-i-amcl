@@ -30,7 +30,7 @@ $ sudo apt-get install ros-kinetic-amcl
 
 #### To run PGM map creator need to be installed `libignition-math2-dev` and `protobuf-compiler` to compile the map creator
 ```bash
-sudo apt-get install libignition-math2-dev protobuf-compiler
+$ sudo apt-get install libignition-math2-dev protobuf-compiler
 
 ```
 
