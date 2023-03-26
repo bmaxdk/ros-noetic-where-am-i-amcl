@@ -216,7 +216,7 @@ To begin with simulation setup `roslaunch <YOUR PACKAGE NAME> world.launch`
 $ roslaunch my_robot world.launch
 ```
 
-### Map Setup
+### Map Setup (some reason pgm_map_creator is not working in noetic. You need to find other pgm_map_creator for fenerating map.pgm)
 Current robot (my_robot) has zero information on its surroundings. To generate the map from Gazebo world directly using ROS package: [pgm_map_creator](https://github.com/udacity/pgm_map_creator). The map ROS AMCL Package uses is a `pgm` file.
 
 To generate map,
