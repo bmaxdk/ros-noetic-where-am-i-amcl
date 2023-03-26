@@ -22,10 +22,10 @@ Application of using the adaptive monte carlo localizatin (AMCL) algorithm is im
 
 #### Following package need to be installed
 ```bash
-$ sudo apt-get install ros-kinetic-navigation
-$ sudo apt-get install ros-kinetic-map-server
-$ sudo apt-get install ros-kinetic-move-base
-$ sudo apt-get install ros-kinetic-amcl
+$ sudo apt-get install ros-noetic-navigation
+$ sudo apt-get install ros-noetic-map-server
+$ sudo apt-get install ros-noetic-move-base
+$ sudo apt-get install ros-noetic-amcl
 ```
 
 #### To run PGM map creator need to be installed `libignition-math2-dev` and `protobuf-compiler` to compile the map creator
@@ -46,9 +46,9 @@ $ catkin_make
 
 Next, clone the repository into the src directory:
 ```bash
-$ git clone https://github.com/bmaxdk/RoboticsND-where-am-i.git
-$ mv -avr RoboticsND-where-am-i/catkin_ws/src src
-$ rm -rf RoboticsND-where-am-i
+$ git clone https://github.com/bmaxdk/ros-noetic-where-am-i-amcl.git
+$ mv -avr ros-noetic-where-am-i-amcl/catkin_ws/src src
+$ rm -rf ros-noetic-where-am-i-amcl
 $ cd src
 $ rm -rf CMakeLists.txt
 ```
@@ -199,10 +199,10 @@ workspace/catkin_ws/src# tree
 ## Project Overview
 Following package need to be installed
 ```bash
-$ sudo apt-get install ros-kinetic-navigation
-$ sudo apt-get install ros-kinetic-map-server
-$ sudo apt-get install ros-kinetic-move-base
-$ sudo apt-get install ros-kinetic-amcl
+$ sudo apt-get install ros-noetic-navigation
+$ sudo apt-get install ros-noetic-map-server
+$ sudo apt-get install ros-noetic-move-base
+$ sudo apt-get install ros-noetic-amcl
 ```
 
 To run PGM map creator need to install `libignition-math2-dev` and `protobuf-compiler` to compile the map creator
@@ -235,7 +235,7 @@ $ cp cho_robot_world.world src/pgm_map_creator/world/
 
 ```
 
-In `src/pgm_map_creator/world/` add the following tag towards the end of the file, but just before </world> tag into [world](https://github.com/bmaxdk/RoboticsND-where-am-i/blob/main/catkin_ws/src/pgm_map_creator/world/cho_robot_world.world) file.
+In `src/pgm_map_creator/world/` add the following tag towards the end of the file, but just before </world> tag into [world](https://github.com/bmaxdk/ros-noetic-where-am-i-amcl/blob/main/catkin_ws/src/pgm_map_creator/world/cho_robot_world.world) file.
 ```xml
 <plugin filename="libcollision_map_creator.so" name="collision_map_creator"/>
 ```
@@ -278,7 +278,7 @@ negate: 0
 The default map size is 30 by 30, so the origin will be [-15, -15, 0], i.e. half the size of the map.
 
 ### AMCL `launch` file
-[whereami](https://github.com/bmaxdk/RoboticsND-where-am-i/tree/main/catkin_ws/src/whereami) package contains `AMCL launch` file.
+[whereami](https://github.com/bmaxdk/ros-noetic-where-am-i-amcl/tree/main/catkin_ws/src/whereami) package contains `AMCL launch` file.
 The following steps applied to create AMCL launch file
 ```bash
 # cd /home/workspace/catkin_ws/src/<YOUR PACKAGE NAME>/launch/
@@ -287,7 +287,7 @@ $ touch amcl.launch
 ```
 
 
-In [amcl.launch](https://github.com/bmaxdk/RoboticsND-where-am-i/blob/main/catkin_ws/src/whereami/launch/amcl.launch) file, `Map Server Node`, `AMCL Node`, and `Move Base Node` are added.
+In [amcl.launch](https://github.com/bmaxdk/ros-noetic-where-am-i-amcl/blob/main/catkin_ws/src/whereami/launch/amcl.launch) file, `Map Server Node`, `AMCL Node`, and `Move Base Node` are added.
 
 [`Map Server Node`](http://wiki.ros.org/map_server) provides map data as a ROS service to other nodes as the `amcl` node. It will locate the map and send it ouy as the map data.
 
@@ -329,7 +329,7 @@ In AMCL node, it allows to set initial position by adding
 
 `move_base` package allows to define a nevigation goal position for the robot in the map which will navigate to that goal position. This step is option if choose to use `teleop` node to control and localize robot. This step utilizes a costmap where each part of the map is divided into which area is occupied, like walls or obstacles and which area is unoccupied.
 `Move Base Node`requires both remap and parameters to move the robot in the world. You can use`rosparam` to include config files to set multiple parameters directly. 
-In this step added [config files](https://github.com/bmaxdk/RoboticsND-where-am-i/tree/main/catkin_ws/src/whereami/config) in `catkin_ws/src/whereami/config`.
+In this step added [config files](https://github.com/bmaxdk/ros-noetic-where-am-i-amcl/tree/main/catkin_ws/src/whereami/config) in `catkin_ws/src/whereami/config`.
 ```bash
 $ cd ..
 $ mkdir config
