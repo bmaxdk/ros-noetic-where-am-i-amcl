@@ -176,7 +176,7 @@ workspace/catkin_ws/src# tree
 │   ├── package.xml
 │   ├── README.md
 │   └── teleop_twist_keyboard.py
-└── whereami                                            # Package
+└── whereami                                            # Package for amcl launch file
     ├── CMakeLists.txt
     ├── config
     │   ├── base_local_planner_params.yaml
@@ -187,7 +187,7 @@ workspace/catkin_ws/src# tree
     ├── include
     │   └── whereami
     ├── launch
-    │   └── amcl.launch
+    │   └── amcl.launch                                 # project amcl launch file
     ├── maps
     │   ├── map.pgm                                     # pgm map of wold file that created from pgm_map_creator
     │   └── map.yaml
