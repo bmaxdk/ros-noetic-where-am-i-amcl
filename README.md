@@ -71,11 +71,11 @@ $ source devel/setup.bash
 $ roslaunch whereami amcl.launch
 ```
 #### Rviz Configuration will be already setup. If not, follows step
-Select `odom` for fixed frame. 
-Add `RobotModel`.
-Add `Map` and select `/map` topic.
-Add `PoseArray` and select `particlecloud` topic.
-Add laser sensor.
+* Select `odom` for fixed frame. 
+* Add `RobotModel`.
+* Add `Map` and select `/map` topic.
+* Add `PoseArray` and select `particlecloud` topic.
+* Add laser sensor.
 
 #### Control robot step
 (option1) To launch telop, open a new terminal and execute the following:
