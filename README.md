@@ -126,7 +126,7 @@ workspace/catkin_ws/src# tree
 │   │   └── process_image.cpp
 │   └── srv
 │       └── DriveToTarget.srv
-├── CMakeLists.txt -> /opt/ros/kinetic/share/catkin/cmake/toplevel.cmake
+├── CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake
 ├── my_robot                                            # Package contains robot and world
 │   ├── CMakeLists.txt
 │   ├── config
